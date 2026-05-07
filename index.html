@@ -57,7 +57,7 @@
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-nav { display: none; flex-direction: column; background: var(--warm-white); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md); }
+    .mobile-nav { display: none; flex-direction: column; background: var(--warm-white); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md); position: fixed; top: 76px; left: 0; right: 0; z-index: 899; }
     .mobile-nav.open { display: flex; }
     .mobile-nav a { text-decoration: none; color: var(--ink-2); font-size: 15px; font-weight: 600; padding: 16px 5%; border-bottom: 1px solid var(--border); transition: background 0.2s; }
     .mobile-nav a:hover { background: var(--cream-2); }
@@ -760,6 +760,10 @@
     hamburger.addEventListener('click', function() {
       this.classList.toggle('open');
       mobileNav.classList.toggle('open');
+      if (mobileNav.classList.contains('open')) {
+        const navRect = nav.getBoundingClientRect();
+        mobileNav.style.top = navRect.bottom + 'px';
+      }
     });
 
     // Close mobile nav when clicking a link
