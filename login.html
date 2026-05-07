@@ -467,6 +467,35 @@
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
+  <!-- PWA Install Banner -->
+  <div id="pwa-install-banner" style="
+    display:none; position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
+    background:#1a3a2a; color:white; border-radius:16px; padding:16px 20px;
+    box-shadow:0 8px 40px rgba(0,0,0,0.25); z-index:9999; align-items:center;
+    gap:14px; min-width:300px; max-width:90vw; border:1px solid rgba(184,146,42,0.3);
+    font-family:'Instrument Sans',sans-serif;">
+    <style>
+      #pwa-install-banner.visible { display:flex !important; }
+      #pwa-install-banner .pwa-icon { width:40px; height:40px; border-radius:10px; flex-shrink:0; }
+      #pwa-install-banner .pwa-text { flex:1; }
+      #pwa-install-banner .pwa-text strong { display:block; font-size:14px; font-weight:700; }
+      #pwa-install-banner .pwa-text span { font-size:12px; opacity:0.75; }
+      #pwa-install-btn { background:#b8922a; color:white; border:none; border-radius:10px;
+        padding:9px 18px; font-size:13px; font-weight:700; cursor:pointer;
+        font-family:inherit; white-space:nowrap; flex-shrink:0; }
+      #pwa-install-btn:hover { background:#d4ab4a; }
+      #pwa-install-dismiss { background:none; border:none; color:rgba(255,255,255,0.5);
+        font-size:20px; cursor:pointer; line-height:1; flex-shrink:0; padding:0 4px; }
+      #pwa-install-dismiss:hover { color:white; }
+    </style>
+    <img class="pwa-icon" src="icon-192.png" alt="STK Royal">
+    <div class="pwa-text">
+      <strong>Install STK Royal</strong>
+      <span>Add to your home screen for quick access</span>
+    </div>
+    <button id="pwa-install-btn">Install</button>
+    <button id="pwa-install-dismiss" aria-label="Dismiss">&times;</button>
+  </div>
 
 
   <div class="auth-container">
@@ -631,6 +660,53 @@
       // Pre-fill demo hint (optional)
       console.log('STK Royal — Sophisticated login ready.');
     })();
+  </script>
+
+  <!-- ===== PWA: SERVICE WORKER + INSTALL PROMPT ===== -->
+  <script>
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('[PWA] Service worker registered:', reg.scope))
+          .catch(err => console.warn('[PWA] SW registration failed:', err));
+      });
+    }
+
+    // Install prompt (Android/Chrome "Add to Home Screen")
+    let deferredPrompt;
+    const installBanner = document.getElementById('pwa-install-banner');
+    const installBtn = document.getElementById('pwa-install-btn');
+    const installDismiss = document.getElementById('pwa-install-dismiss');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      if (installBanner) installBanner.classList.add('visible');
+    });
+
+    if (installBtn) {
+      installBtn.addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log('[PWA] Install outcome:', outcome);
+        deferredPrompt = null;
+        installBanner.classList.remove('visible');
+      });
+    }
+
+    if (installDismiss) {
+      installDismiss.addEventListener('click', () => {
+        installBanner.classList.remove('visible');
+      });
+    }
+
+    // Hide banner if already installed
+    window.addEventListener('appinstalled', () => {
+      if (installBanner) installBanner.classList.remove('visible');
+      console.log('[PWA] App installed!');
+    });
   </script>
 </body>
 </html>
