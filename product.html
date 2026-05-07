@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STK Royal Products — Premium Instant Dry Yeast | The Baking Gold Standard</title>
+  <meta name="description" content="Explore STK Royal's premium instant dry yeast products. Naturally sourced, 100% recyclable packaging. Available in small sachets, large packs, wholesale cartons, and bulk orders.">
+  <meta property="og:title" content="STK Royal Products — Premium Instant Dry Yeast">
+  <meta property="og:description" content="Premium instant dry yeast made from naturally sourced ingredients. Nutritious, safe, 100% eco-packaged. Shop our full range.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,600;1,9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0e0c09; --ink-2: #2b2620; --cream: #faf7f2; --cream-2: #f3ede3;
+      --warm-white: #fffef9; --gold: #b8922a; --gold-light: #d4ab4a;
+      --gold-pale: #f5e9c8; --gold-glow: rgba(184,146,42,0.15);
+      --forest: #1a3a2a; --forest-mid: #2d5a40; --forest-light: #4a8c62;
+      --mint-pale: #e8f5ed; --muted: #7a6f62; --border: rgba(14,12,9,0.08);
+      --border-gold: rgba(184,146,42,0.25);
+      --shadow-sm: 0 2px 16px rgba(14,12,9,0.06);
+      --shadow-md: 0 12px 48px rgba(14,12,9,0.10);
+      --shadow-lg: 0 32px 96px rgba(14,12,9,0.14);
+      --r: 16px; --r-lg: 32px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; line-height: 1.6; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--cream-2); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ANNOUNCEMENT */
+    .announcement { background: var(--forest); color: rgba(255,255,255,0.85); text-align: center; padding: 11px 20px; font-size: 12.5px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .ann-dot { width: 6px; height: 6px; background: var(--gold-light); border-radius: 50%; animation: blink 2s infinite; flex-shrink: 0; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+    .announcement a { color: var(--gold-light); text-decoration: none; font-weight: 700; }
+
+    /* NAV - Consistent with index.html */
+    nav { position: sticky; top: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 76px; background: rgba(250,247,242,0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s; }
+    nav.scrolled { box-shadow: var(--shadow-sm); }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-logo-text { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--forest); letter-spacing: -0.5px; }
+    .nav-logo-text span { color: var(--gold); }
+    .nav-links { display: flex; gap: 40px; align-items: center; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--ink-2); font-size: 13.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; transition: color 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.25s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-links a.active { color: var(--gold); }
+    .nav-links a.active::after { transform: scaleX(1); }
+    .nav-cta { background: var(--forest) !important; color: white !important; padding: 11px 26px !important; border-radius: 50px !important; box-shadow: 0 4px 20px rgba(26,58,42,0.3) !important; }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--forest-mid) !important; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--forest); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; flex-direction: column; background: var(--warm-white); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md); position: sticky; top: 76px; z-index: 899; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { text-decoration: none; color: var(--ink-2); font-size: 15px; font-weight: 600; padding: 16px 5%; border-bottom: 1px solid var(--border); transition: background 0.2s; }
+    .mobile-nav a:hover { background: var(--cream-2); }
+    .mobile-nav .m-cta { background: var(--forest); color: white !important; text-align: center; margin: 12px 5% 20px; border-radius: 12px; border-bottom: none !important; }
+    .mobile-nav a.active { color: var(--forest); background: var(--mint-pale); border-left: 3px solid var(--forest); padding-left: calc(5% - 3px); }
+
+    /* PAGE HERO */
+    .page-hero { background: linear-gradient(135deg, var(--forest) 0%, #0d2218 60%, #0a1a10 100%); color: white; padding: 100px 7% 90px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(184,146,42,0.12) 0%, transparent 60%); pointer-events: none; }
+    .page-hero-inner { max-width: 780px; position: relative; z-index: 1; }
+    .page-hero-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(184,146,42,0.15); color: var(--gold-light); padding: 8px 18px; border-radius: 50px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; border: 1px solid rgba(184,146,42,0.25); }
+    .page-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2.6rem, 4.5vw, 5rem); font-weight: 700; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 24px; }
+    .page-hero h1 em { font-style: italic; color: var(--gold-light); font-weight: 300; }
+    .page-hero p { font-size: 18px; color: rgba(255,255,255,0.65); line-height: 1.8; max-width: 600px; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 28px; }
+    .breadcrumb a, .breadcrumb span { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.4); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--gold-light); }
+    .breadcrumb .sep { color: rgba(255,255,255,0.2); }
+    .breadcrumb .current { color: var(--gold-light); }
+
+    /* MARQUEE */
+    .marquee-strip { background: var(--gold); color: white; padding: 14px 0; overflow: hidden; white-space: nowrap; }
+    .marquee-track { display: inline-flex; animation: marquee 25s linear infinite; }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .marquee-item { padding: 0 40px; font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-flex; align-items: center; gap: 16px; }
+    .marquee-sep { opacity: 0.5; font-size: 8px; }
+
+    /* PRODUCTS SECTION */
+    .products-section { padding: 100px 7%; background: var(--cream); }
+    .section-label { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 16px; }
+    .section-title { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 3.5vw, 3.8rem); font-weight: 700; line-height: 1.1; color: var(--ink); letter-spacing: -1px; }
+    .section-title em { font-style: italic; color: var(--gold); font-weight: 300; }
+    .section-sub { font-size: 17px; color: var(--muted); line-height: 1.8; max-width: 580px; margin-top: 20px; }
+    .section-header { margin-bottom: 72px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 20px auto 0; }
+
+    .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .product-card { background: white; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: transform 0.3s, box-shadow 0.3s; position: relative; }
+    .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .product-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
+    .product-card-img { background: linear-gradient(145deg, #f0f7f3 0%, #e4f0e9 50%, #d8eae0 100%); display: flex; align-items: center; justify-content: center; padding: 60px 40px; position: relative; overflow: hidden; min-height: 400px; }
+    .product-card-img::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(184,146,42,0.08) 0%, transparent 60%); z-index: 1; }
+    .product-card-img img { width: 100%; height: 100%; object-fit: contain; position: relative; z-index: 2; filter: drop-shadow(0 20px 40px rgba(26,58,42,0.2)); transition: transform 0.4s ease; }
+    .product-card:hover .product-card-img img { transform: scale(1.06); }
+    .product-badge { position: absolute; top: 20px; right: 20px; background: var(--forest); color: white; padding: 8px 16px; border-radius: 50px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; z-index: 3; box-shadow: var(--shadow-md); }
+    .product-badge.bestseller { background: var(--gold); }
+    .product-card-info { padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; }
+    .product-tag { display: inline-flex; align-items: center; gap: 6px; background: var(--gold-pale); color: var(--gold); padding: 6px 14px; border-radius: 50px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; width: fit-content; border: 1px solid var(--border-gold); }
+    .product-card-info h3 { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 700; color: var(--ink); letter-spacing: -0.5px; margin-bottom: 8px; }
+    .product-card-info .product-meta { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--forest-light); margin-bottom: 20px; }
+    .price-row { display: flex; align-items: baseline; gap: 12px; padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 20px; flex-wrap: wrap; }
+    .price-main { font-size: 42px; font-weight: 800; color: var(--forest); line-height: 1; }
+    .price-unit { font-size: 14px; color: var(--muted); }
+    .price-bulk { background: var(--gold-pale); color: var(--gold); padding: 5px 14px; border-radius: 50px; font-size: 12px; font-weight: 700; border: 1px solid var(--border-gold); }
+    .product-desc { font-size: 14.5px; color: var(--muted); line-height: 1.8; margin-bottom: 24px; padding-left: 16px; border-left: 3px solid var(--gold); }
+    .product-features { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 28px; }
+    .product-feat { display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
+    .product-feat::before { content: '✓'; color: var(--forest); font-weight: 700; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--forest); color: white; border: 2px solid var(--forest); border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none; cursor: pointer; transition: all 0.25s; box-shadow: 0 6px 24px rgba(26,58,42,0.3); font-family: 'Instrument Sans', sans-serif; width: fit-content; }
+    .btn-primary:hover { background: var(--forest-mid); border-color: var(--forest-mid); transform: translateY(-2px); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: transparent; color: var(--forest); border: 2px solid var(--forest); border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none; cursor: pointer; transition: all 0.25s; font-family: 'Instrument Sans', sans-serif; width: fit-content; }
+    .btn-outline:hover { background: var(--forest); color: white; }
+    .btn-gold { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--gold); color: white; border: 2px solid var(--gold); border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none; cursor: pointer; transition: all 0.25s; box-shadow: 0 6px 24px rgba(184,146,42,0.3); font-family: 'Instrument Sans', sans-serif; width: fit-content; }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* COMPARISON TABLE */
+    .compare-section { background: var(--warm-white); padding: 100px 7%; }
+    .compare-table-wrap { overflow-x: auto; margin-top: 56px; border-radius: var(--r-lg); border: 1px solid var(--border); box-shadow: var(--shadow-md); }
+    .compare-table { width: 100%; border-collapse: collapse; background: white; }
+    .compare-table th { background: var(--forest); color: white; padding: 20px 24px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-align: left; }
+    .compare-table th:first-child { border-radius: var(--r-lg) 0 0 0; }
+    .compare-table th:last-child { border-radius: 0 var(--r-lg) 0 0; }
+    .compare-table td { padding: 18px 24px; font-size: 14px; color: var(--ink-2); border-bottom: 1px solid var(--border); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover td { background: var(--cream); }
+    .compare-table .highlight { color: var(--forest); font-weight: 700; }
+    .compare-table .check { color: var(--forest); font-weight: 700; font-size: 16px; }
+
+    /* BULK SECTION */
+    .bulk-section { background: var(--forest); color: white; padding: 100px 7%; position: relative; overflow: hidden; }
+    .bulk-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(184,146,42,0.12) 0%, transparent 60%); pointer-events: none; }
+    .bulk-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
+    .bulk-content h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 3vw, 3.2rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.8px; margin-bottom: 24px; }
+    .bulk-content h2 em { font-style: italic; color: var(--gold-light); font-weight: 300; }
+    .bulk-content p { font-size: 16px; color: rgba(255,255,255,0.65); line-height: 1.9; margin-bottom: 20px; }
+    .bulk-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+    .bulk-stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r); padding: 24px 20px; }
+    .bulk-stat-num { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 700; color: var(--gold-light); line-height: 1; }
+    .bulk-stat-label { font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; margin-top: 6px; }
+    .bulk-image { display: flex; align-items: center; justify-content: center; }
+    .bulk-image img { max-width: 100%; filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5)); animation: floatY 5s ease-in-out infinite; }
+    @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+
+    /* CTA */
+    .cta-section { background: var(--gold); color: white; padding: 100px 7%; text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 60%); pointer-events: none; }
+    .cta-section h2 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 4vw, 4rem); font-weight: 700; letter-spacing: -1px; margin-bottom: 20px; position: relative; }
+    .cta-section h2 em { font-style: italic; font-weight: 300; }
+    .cta-section p { font-size: 18px; opacity: 0.8; max-width: 520px; margin: 0 auto 44px; line-height: 1.8; position: relative; }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-white { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; background: white; color: var(--gold); border: 2px solid white; border-radius: 12px; font-size: 15px; font-weight: 700; text-decoration: none; cursor: pointer; transition: all 0.25s; box-shadow: 0 8px 32px rgba(0,0,0,0.15); font-family: 'Instrument Sans', sans-serif; }
+    .btn-white:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
+    .btn-outline-white { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); border-radius: 12px; font-size: 15px; font-weight: 700; text-decoration: none; cursor: pointer; transition: all 0.25s; font-family: 'Instrument Sans', sans-serif; }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+    /* NEWSLETTER */
+    .newsletter-strip { background: var(--ink); color: white; padding: 60px 7%; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; position: relative; overflow: hidden; }
+    .newsletter-strip::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 40% 60% at 20% 50%, rgba(26,58,42,0.3) 0%, transparent 60%); pointer-events: none; }
+    .newsletter-strip h3 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 700; letter-spacing: -0.5px; position: relative; }
+    .newsletter-strip p { font-size: 15px; opacity: 0.5; margin-top: 6px; position: relative; }
+    .nl-form { display: flex; border-radius: 50px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15); min-width: 340px; background: rgba(255,255,255,0.06); position: relative; }
+    .nl-form input { flex: 1; background: transparent; border: none; padding: 14px 22px; font-size: 14px; color: white; font-family: 'Instrument Sans', sans-serif; outline: none; }
+    .nl-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .nl-form button { background: var(--gold); color: white; border: none; padding: 14px 26px; font-size: 13px; font-weight: 800; cursor: pointer; font-family: 'Instrument Sans', sans-serif; transition: opacity 0.2s; white-space: nowrap; letter-spacing: 0.5px; }
+    .nl-form button:hover { opacity: 0.9; }
+
+    /* FOOTER */
+    footer { background: var(--ink); color: white; position: relative; overflow: hidden; }
+    footer::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 60% at 10% 20%, rgba(26,58,42,0.25) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 90% 80%, rgba(184,146,42,0.10) 0%, transparent 60%); pointer-events: none; }
+    .footer-accent { height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 64px; padding: 80px 7% 60px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 1; }
+    .footer-brand-logo { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 700; letter-spacing: -1px; color: white; margin-bottom: 8px; }
+    .footer-brand-logo span { color: var(--gold); }
+    .footer-brand-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 20px; }
+    .footer-brand p { font-size: 13.5px; opacity: 0.4; line-height: 2; margin-bottom: 28px; }
+    .footer-pay-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pay-badge { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 6px 12px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+    .footer-col-title { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 2.5px; color: var(--gold); padding-bottom: 14px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .footer-col ul { list-style: none; }
+    .footer-col li { padding: 8px 0; font-size: 13.5px; opacity: 0.45; border-bottom: 1px solid rgba(255,255,255,0.03); cursor: pointer; transition: opacity 0.2s, padding-left 0.2s; }
+    .footer-col li:last-child { border-bottom: none; }
+    .footer-col li:hover { opacity: 0.85; padding-left: 6px; }
+    .footer-col li a { text-decoration: none; color: inherit; }
+    .footer-connect-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(184,146,42,0.2); border-radius: 20px; padding: 32px 28px; }
+    .footer-addr { font-size: 12.5px; opacity: 0.4; line-height: 2; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-addr strong { color: rgba(255,255,255,0.7); display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; opacity: 1; }
+    .social-row { display: flex; gap: 10px; margin-top: 20px; }
+    .social-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); text-decoration: none; transition: all 0.2s; }
+    .social-icon:hover { background: var(--gold); border-color: var(--gold); color: white; transform: translateY(-2px); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 24px 7%; flex-wrap: wrap; gap: 16px; position: relative; z-index: 1; }
+    .footer-bottom p { font-size: 12px; opacity: 0.25; }
+    .footer-bottom-links { display: flex; gap: 24px; align-items: center; }
+    .footer-bottom-links a { font-size: 11.5px; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: var(--gold); }
+    .footer-bottom-links .sep { width: 1px; height: 12px; background: rgba(255,255,255,0.12); }
+
+    /* ANIMATION */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .product-card.featured { grid-template-columns: 1fr; }
+      .product-grid { grid-template-columns: 1fr; }
+      .bulk-layout { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .page-hero { padding: 72px 5% 60px; }
+      .product-card-info { padding: 36px 28px; }
+      .product-card-img { min-height: 300px; padding: 40px 28px; }
+      .compare-table-wrap { margin-top: 40px; }
+      .bulk-section { padding: 72px 5%; }
+      .newsletter-strip { flex-direction: column; }
+      .nl-form { min-width: unset; width: 100%; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-bottom-links { justify-content: center; flex-wrap: wrap; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 2.2rem; }
+      .product-card-info { padding: 28px 20px; }
+      .product-card-img { min-height: 250px; padding: 32px 20px; }
+      .btn-row { flex-direction: column; }
+      .bulk-stats { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT -->
+  <div class="announcement">
+    <span class="ann-dot"></span>
+    Premium baking yeast — natural, nutritious &amp; eco-packaged &nbsp;|&nbsp;
+    <a href="contact.html">Order now →</a>
+    <span class="ann-dot"></span>
+  </div>
+
+  <!-- NAV - Consistent with index.html -->
+  <nav id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <img src="img/logo_remove.png" alt="STK Royal Logo" onerror="this.style.display='none'">
+      <span class="nav-logo-text">STK<span> Royal</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="product.html" class="active">Product</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="signup.html">Sign Up</a></li>
+      <li><a href="login.html" class="nav-cta">Login</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="product.html" class="active">Product</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="login.html" class="m-cta">Login</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Products</span>
+      </div>
+      <div class="page-hero-label">Our Range</div>
+      <h1>Premium Yeast<br><em>For Every Need</em></h1>
+      <p>From single sachets for home bakers to bulk cartons for commercial kitchens — find the perfect STK Royal yeast for your kitchen.</p>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">🌿 Natural Ingredients <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">🍞 Baking Grade Excellence <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">♻️ 100% Eco Packaging <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">✅ Safe for Consumption <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">🏆 Trusted by Professionals <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">🌍 Made for Nigerian Kitchens <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">🌿 Natural Ingredients <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">🍞 Baking Grade Excellence <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">♻️ 100% Eco Packaging <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">✅ Safe for Consumption <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">🏆 Trusted by Professionals <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">🌍 Made for Nigerian Kitchens <span class="marquee-sep">◆</span></span>
+    </div>
+  </div>
+
+  <!-- PRODUCTS SECTION -->
+  <section class="products-section">
+    <div class="section-header center">
+      <span class="section-label">Our Products</span>
+      <h2 class="section-title reveal">Choose Your <em>Perfect</em><br>Baking Companion</h2>
+      <p class="section-sub reveal reveal-delay-1">Every STK Royal product is crafted from naturally sourced ingredients, packaged in 100% recyclable materials, and designed for baking excellence.</p>
+    </div>
+    <div class="product-grid">
+      
+      <!-- Featured Product - Small Sachet -->
+      <div class="product-card featured reveal">
+        <div class="product-card-img">
+          <img src="img/stkroyal.png" alt="STK Royal Small Sachet - 36 Units per Carton">
+          <div class="product-badge bestseller">★ Bestseller</div>
+        </div>
+        <div class="product-card-info">
+          <div class="product-tag">✦ Signature Collection</div>
+          <h3>STK Royal Small Sachet</h3>
+          <p class="product-meta">36 Units per Carton</p>
+          <div class="price-row">
+            <span class="price-main">₦530</span>
+            <span class="price-unit">/ unit</span>
+            <span class="price-bulk">₦18,260 / Carton</span>
+          </div>
+          <p class="product-desc">Our flagship product — the perfect single-use sachet for home bakers and professional kitchens alike. Each sachet contains precisely measured premium instant dry yeast for consistent results.</p>
+          <div class="product-features">
+            <span class="product-feat">Naturally sourced</span>
+            <span class="product-feat">100% recyclable</span>
+            <span class="product-feat">Baking grade</span>
+            <span class="product-feat">Safe for all ages</span>
+            <span class="product-feat">Single-use convenience</span>
+            <span class="product-feat">Professional quality</span>
+          </div>
+          <div class="btn-row">
+            <a href="contact.html" class="btn-gold">Order Now →</a>
+            <a href="contact.html" class="btn-outline">Bulk Enquiry</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Large Sachet -->
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card-img">
+          <img src="img/stkroyal.png" alt="STK Royal Large Sachet">
+          <div class="product-badge">New</div>
+        </div>
+        <div class="product-card-info">
+          <div class="product-tag">✦ Value Collection</div>
+          <h3>STK Royal Large Sachet</h3>
+          <p class="product-meta">24 Units per Carton</p>
+          <div class="price-row">
+            <span class="price-main">₦950</span>
+            <span class="price-unit">/ unit</span>
+            <span class="price-bulk">₦22,800 / Carton</span>
+          </div>
+          <p class="product-desc">Double the quantity for high-volume baking. Ideal for commercial bakeries, restaurants, and serious home bakers who demand more from their yeast.</p>
+          <div class="product-features">
+            <span class="product-feat">Naturally sourced</span>
+            <span class="product-feat">100% recyclable</span>
+            <span class="product-feat">Larger quantity</span>
+            <span class="product-feat">Commercial grade</span>
+          </div>
+          <div class="btn-row">
+            <a href="contact.html" class="btn-primary">Order Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wholesale Pack -->
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card-img">
+          <img src="img/stkroyal.png" alt="STK Royal Wholesale Pack">
+          <div class="product-badge">Wholesale</div>
+        </div>
+        <div class="product-card-info">
+          <div class="product-tag">✦ Trade Collection</div>
+          <h3>Wholesale Pack</h3>
+          <p class="product-meta">Custom quantities available</p>
+          <div class="price-row">
+            <span class="price-main">Custom</span>
+            <span class="price-unit">Pricing</span>
+          </div>
+          <p class="product-desc">Tailored wholesale solutions for distributors, retail chains, and large-scale commercial operations. Competitive pricing with flexible delivery options.</p>
+          <div class="product-features">
+            <span class="product-feat">Bulk pricing</span>
+            <span class="product-feat">Custom quantities</span>
+            <span class="product-feat">Priority delivery</span>
+            <span class="product-feat">Dedicated support</span>
+          </div>
+          <div class="btn-row">
+            <a href="contact.html" class="btn-outline">Request Quote →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="compare-section">
+    <div class="section-header center">
+      <span class="section-label">Compare Products</span>
+      <h2 class="section-title reveal">Find Your <em>Perfect</em><br>Match</h2>
+      <p class="section-sub reveal reveal-delay-1">Compare our product range to find the ideal STK Royal yeast for your specific needs.</p>
+    </div>
+    <div class="compare-table-wrap reveal">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Small Sachet</th>
+            <th>Large Sachet</th>
+            <th>Wholesale Pack</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Best For</strong></td>
+            <td>Home bakers & small kitchens</td>
+            <td>Bakeries & restaurants</td>
+            <td>Distributors & retail chains</td>
+          </tr>
+          <tr>
+            <td><strong>Units per Carton</strong></td>
+            <td><span class="highlight">36</span></td>
+            <td><span class="highlight">24</span></td>
+            <td><span class="highlight">Custom</span></td>
+          </tr>
+          <tr>
+            <td><strong>Price per Unit</strong></td>
+            <td><span class="highlight">₦530</span></td>
+            <td><span class="highlight">₦950</span></td>
+            <td>Contact for pricing</td>
+          </tr>
+          <tr>
+            <td><strong>Carton Price</strong></td>
+            <td>₦18,260</td>
+            <td>₦22,800</td>
+            <td>Volume-based</td>
+          </tr>
+          <tr>
+            <td><strong>Natural Ingredients</strong></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td><strong>100% Recyclable</strong></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td><strong>Baking Grade</strong></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td><strong>Safe for All Ages</strong></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td><strong>Minimum Order</strong></td>
+            <td>1 unit</td>
+            <td>1 unit</td>
+            <td>Negotiable</td>
+          </tr>
+          <tr>
+            <td><strong>Delivery</strong></td>
+            <td>Nationwide</td>
+            <td>Nationwide</td>
+            <td>Nationwide + International</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- BULK SECTION -->
+  <section class="bulk-section">
+    <div class="bulk-layout">
+      <div class="bulk-content">
+        <span class="section-label" style="color:var(--gold-light)">Bulk & Wholesale</span>
+        <h2 class="reveal">Scale Your Baking<br><em>Without Compromise</em></h2>
+        <p class="reveal reveal-delay-1">Running a bakery, restaurant, or distribution business? STK Royal offers tailored bulk solutions with competitive pricing, reliable supply, and the same premium quality in every sachet.</p>
+        <p class="reveal reveal-delay-2">Our wholesale partners enjoy priority delivery, dedicated account management, and flexible payment terms designed to support your business growth.</p>
+        <div class="bulk-stats reveal reveal-delay-2">
+          <div class="bulk-stat">
+            <div class="bulk-stat-num">100%</div>
+            <div class="bulk-stat-label">Quality Consistency</div>
+          </div>
+          <div class="bulk-stat">
+            <div class="bulk-stat-num">24/7</div>
+            <div class="bulk-stat-label">Order Support</div>
+          </div>
+          <div class="bulk-stat">
+            <div class="bulk-stat-num">Nationwide</div>
+            <div class="bulk-stat-label">Delivery Coverage</div>
+          </div>
+          <div class="bulk-stat">
+            <div class="bulk-stat-num">Flexible</div>
+            <div class="bulk-stat-label">Payment Terms</div>
+          </div>
+        </div>
+        <div style="margin-top: 40px;" class="reveal reveal-delay-3">
+          <a href="contact.html" class="btn-gold">Become a Wholesale Partner →</a>
+        </div>
+      </div>
+      <div class="bulk-image reveal">
+        <img src="img/logo_green.png" alt="STK Royal Bulk Orders" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to <em>Bake Better</em>?</h2>
+    <p>Order your STK Royal yeast today and experience the gold standard in baking.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn-white">Order Now →</a>
+      <a href="about.html" class="btn-outline-white">Learn Our Story</a>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter-strip">
+    <div>
+      <h3>Stay in the Loop</h3>
+      <p>Fresh deals, new product launches &amp; exclusive offers — straight to your inbox.</p>
+    </div>
+    <form class="nl-form" onsubmit="nlSubmit(event)">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit">Subscribe →</button>
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-accent"></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">STK<span> Royal</span></div>
+        <div class="footer-brand-tag">The Baking Gold Standard</div>
+        <p>Premium instant dry yeast made from naturally sourced ingredients. Nutritious, safe, and packaged in 100% recyclable sachets for professional chefs, bakers, and home cooks.</p>
+        <div class="footer-pay-badges">
+          <span class="pay-badge">Visa</span>
+          <span class="pay-badge">Mastercard</span>
+          <span class="pay-badge">Paystack</span>
+          <span class="pay-badge">Bank Transfer</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Products</div>
+        <ul>
+          <li><a href="product.html">STK Royal Small</a></li>
+          <li><a href="product.html">STK Royal Large</a></li>
+          <li><a href="product.html">Wholesale Packs</a></li>
+          <li><a href="product.html">Bulk Orders</a></li>
+          <li><a href="contact.html">Distribution</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li>Return Policy</li>
+          <li>Delivery Policy</li>
+          <li>Privacy Policy</li>
+          <li>Terms &amp; Conditions</li>
+        </ul>
+      </div>
+      <div class="footer-connect-box">
+        <div class="footer-col-title">Connect With Us</div>
+        <div class="footer-addr"><strong>Nigeria HQ</strong>Beside Creative Minds Nursery, Opposite C. Zard, Magazine Road, Jericho, Ibadan, Nigeria.</div>
+        <div class="footer-addr"><strong>International</strong>256 Chapman Road, STE 105-4, Newark, New Castle 19702, United States.</div>
+        <div class="social-row">
+          <a class="social-icon" href="https://www.facebook.com/StkNigeria" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a class="social-icon" href="https://twitter.com/StkNG" target="_blank" rel="noopener" aria-label="Twitter"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a class="social-icon" href="https://www.instagram.com/Stkng/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a class="social-icon" href="https://wa.me/2349031787037" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <p>© 2026 STK Royal. All Rights Reserved.</p>
+        <p>A product of STK Africa Inc, Newark, New Castle, United States.</p>
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a><span class="sep"></span>
+        <a href="#">Terms &amp; Conditions</a><span class="sep"></span>
+        <a href="#">Delivery Policy</a><span class="sep"></span>
+        <a href="#">Returns</a>
+      </div>
+    </div>
+  </footer>
+<script>
+    // Main navigation scroll effect
+    const mainNav = document.getElementById('mainNav');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 40) {
+            mainNav.classList.add('scrolled');
+        } else {
+            mainNav.classList.remove('scrolled');
+        }
+    });
+    
+    // Hamburger menu functionality
+    const hamburgerBtn = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileNav');
+    
+    if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Close mobile nav when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                hamburgerBtn.classList.remove('open');
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!hamburgerBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                hamburgerBtn.classList.remove('open');
+                mobileMenu.classList.remove('open');
+            }
+        });
+    }
+
+    // Newsletter form function
+    function nlSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('button');
+        btn.textContent = '✓ Subscribed!';
+        setTimeout(function() {
+            btn.textContent = 'Subscribe →';
+            e.target.reset();
+        }, 3000);
+    }
+
+    // Reveal animations
+    const revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        revealObserver.observe(el);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact STK Royal — Order, Enquiries & Support</title>
+  <meta name="description" content="Get in touch with STK Royal. Order our premium instant dry yeast, enquire about wholesale, distribution partnerships, or general questions. Nigeria HQ and International office.">
+  <meta property="og:title" content="Contact STK Royal — We're Ready to Help">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,600;1,9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0e0c09; --ink-2: #2b2620; --cream: #faf7f2; --cream-2: #f3ede3;
+      --warm-white: #fffef9; --gold: #b8922a; --gold-light: #d4ab4a;
+      --gold-pale: #f5e9c8; --gold-glow: rgba(184,146,42,0.15);
+      --forest: #1a3a2a; --forest-mid: #2d5a40; --forest-light: #4a8c62;
+      --mint-pale: #e8f5ed; --muted: #7a6f62; --border: rgba(14,12,9,0.08);
+      --border-gold: rgba(184,146,42,0.25);
+      --shadow-sm: 0 2px 16px rgba(14,12,9,0.06);
+      --shadow-md: 0 12px 48px rgba(14,12,9,0.10);
+      --shadow-lg: 0 32px 96px rgba(14,12,9,0.14);
+      --r: 16px; --r-lg: 32px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; line-height: 1.6; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--cream-2); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    .announcement { background: var(--forest); color: rgba(255,255,255,0.85); text-align: center; padding: 11px 20px; font-size: 12.5px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .ann-dot { width: 6px; height: 6px; background: var(--gold-light); border-radius: 50%; animation: blink 2s infinite; flex-shrink: 0; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+    .announcement a { color: var(--gold-light); text-decoration: none; font-weight: 700; }
+
+    nav { position: sticky; top: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 76px; background: rgba(250,247,242,0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s; }
+    nav.scrolled { box-shadow: var(--shadow-sm); }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-logo-text { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--forest); letter-spacing: -0.5px; }
+    .nav-logo-text span { color: var(--gold); }
+    .nav-links { display: flex; gap: 36px; align-items: center; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--ink-2); font-size: 13.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; transition: color 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.25s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+    .nav-cta { background: var(--forest) !important; color: white !important; padding: 11px 26px !important; border-radius: 50px !important; box-shadow: 0 4px 20px rgba(26,58,42,0.3) !important; }
+    .nav-cta::after { display: none !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--forest); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; flex-direction: column; background: var(--warm-white); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md); }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { text-decoration: none; color: var(--ink-2); font-size: 15px; font-weight: 600; padding: 16px 5%; border-bottom: 1px solid var(--border); transition: background 0.2s; }
+    .mobile-nav a:hover { background: var(--cream-2); }
+    .mobile-nav .m-cta { background: var(--forest); color: white !important; text-align: center; margin: 12px 5% 20px; border-radius: 12px; border-bottom: none !important; }
+    .mobile-nav a.active { color: var(--forest); background: var(--mint-pale); border-left: 3px solid var(--forest); padding-left: calc(5% - 3px); }
+
+    /* PAGE HERO */
+    .page-hero { background: linear-gradient(135deg, var(--forest) 0%, #0d2218 60%, #0a1a10 100%); color: white; padding: 100px 7% 90px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(184,146,42,0.12) 0%, transparent 60%); pointer-events: none; }
+    .page-hero-inner { max-width: 780px; position: relative; z-index: 1; }
+    .page-hero-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(184,146,42,0.15); color: var(--gold-light); padding: 8px 18px; border-radius: 50px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; border: 1px solid rgba(184,146,42,0.25); }
+    .page-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2.6rem, 4.5vw, 5rem); font-weight: 700; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 24px; }
+    .page-hero h1 em { font-style: italic; color: var(--gold-light); font-weight: 300; }
+    .page-hero p { font-size: 18px; color: rgba(255,255,255,0.65); line-height: 1.8; max-width: 600px; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 28px; }
+    .breadcrumb a, .breadcrumb span { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.4); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--gold-light); }
+    .breadcrumb .sep { color: rgba(255,255,255,0.2); }
+    .breadcrumb .current { color: var(--gold-light); }
+
+    /* MARQUEE */
+    .marquee-strip { background: var(--gold); color: white; padding: 14px 0; overflow: hidden; white-space: nowrap; }
+    .marquee-track { display: inline-flex; animation: marquee 25s linear infinite; }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .marquee-item { padding: 0 40px; font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-flex; align-items: center; gap: 16px; }
+    .marquee-sep { opacity: 0.5; font-size: 8px; }
+
+    /* CONTACT MAIN */
+    .contact-main { padding: 100px 7%; background: var(--cream); }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start; }
+    
+    /* INFO COLUMN */
+    .contact-info-col { display: flex; flex-direction: column; gap: 20px; }
+    .info-card { background: white; border-radius: var(--r); padding: 36px 32px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: transform 0.3s, box-shadow 0.3s; }
+    .info-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .info-card-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--gold-pale); border: 1px solid var(--border-gold); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+    .info-card h4 { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+    .info-card p, .info-card a { font-size: 14px; color: var(--muted); line-height: 2; text-decoration: none; display: block; }
+    .info-card a:hover { color: var(--forest); }
+    .phone-link { color: var(--forest) !important; font-weight: 700 !important; font-size: 15px !important; }
+    .wa-btn { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: white !important; padding: 11px 20px; border-radius: 10px; font-size: 13.5px; font-weight: 700; text-decoration: none !important; margin-top: 14px; transition: opacity 0.2s; width: fit-content; }
+    .wa-btn:hover { opacity: 0.88; transform: none !important; }
+    .hours-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-day { font-weight: 600; color: var(--ink-2); }
+    .hours-time { color: var(--muted); }
+    .hours-time.open { color: var(--forest); font-weight: 700; }
+
+    /* FORM COLUMN */
+    .contact-form-wrap { background: white; border-radius: var(--r-lg); padding: 60px 56px; border: 1px solid var(--border); box-shadow: var(--shadow-md); }
+    .form-header { margin-bottom: 40px; }
+    .form-header h3 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 700; color: var(--ink); letter-spacing: -0.5px; margin-bottom: 8px; }
+    .form-header h3 em { font-style: italic; color: var(--gold); font-weight: 300; }
+    .form-header p { font-size: 15px; color: var(--muted); line-height: 1.7; }
+    .form-tabs { display: flex; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
+    .form-tab { padding: 9px 20px; border-radius: 50px; font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; cursor: pointer; border: 1px solid var(--border); background: var(--cream); color: var(--muted); transition: all 0.2s; }
+    .form-tab.active { background: var(--forest); color: white; border-color: var(--forest); }
+    .form-tab:hover:not(.active) { border-color: var(--gold); color: var(--gold); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-2); margin-bottom: 8px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px 18px; border: 2px solid var(--border); border-radius: 12px; font-size: 15px; font-family: 'Instrument Sans', sans-serif; color: var(--ink); background: var(--cream); transition: border-color 0.2s, background 0.2s; outline: none; resize: none; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); background: white; }
+    .form-group textarea { min-height: 130px; }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a6f62' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 18px center; padding-right: 44px; cursor: pointer; }
+    .form-submit { width: 100%; padding: 18px; background: var(--forest); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Instrument Sans', sans-serif; display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.25s; box-shadow: 0 8px 32px rgba(26,58,42,0.3); }
+    .form-submit:hover { background: var(--forest-mid); transform: translateY(-2px); }
+    .form-msg { display: none; margin-top: 16px; padding: 14px 20px; border-radius: 12px; font-size: 14px; font-weight: 600; }
+    .form-msg.success { background: var(--mint-pale); color: var(--forest); border: 1px solid rgba(26,58,42,0.15); }
+    .form-msg.error { background: #fff0f0; color: #c53030; border: 1px solid rgba(197,48,48,0.2); }
+
+    /* LOCATIONS */
+    .locations-section { background: var(--warm-white); padding: 100px 7%; }
+    .locations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; }
+    .location-card { background: white; border-radius: var(--r-lg); padding: 48px 44px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+    .location-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+    .location-card.nigeria::before { background: linear-gradient(90deg, #008751, #008751); }
+    .location-card.intl::before { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+    .location-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .loc-flag { font-size: 44px; margin-bottom: 20px; display: block; }
+    .loc-country { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 8px; }
+    .location-card h4 { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 16px; }
+    .loc-address { font-size: 14.5px; color: var(--muted); line-height: 2.1; padding-left: 0; margin-bottom: 20px; }
+    .loc-phones { display: flex; flex-direction: column; gap: 6px; }
+    .loc-phone { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--forest); text-decoration: none; }
+    .loc-phone:hover { color: var(--gold); }
+
+    /* FAQ */
+    .faq-section { background: var(--cream); padding: 100px 7%; }
+    .faq-section .section-header { margin-bottom: 56px; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .faq-item { background: white; border-radius: var(--r); border: 1px solid var(--border); overflow: hidden; }
+    .faq-q { padding: 24px 28px; font-size: 15px; font-weight: 700; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; transition: background 0.2s; user-select: none; }
+    .faq-q:hover { background: var(--cream-2); }
+    .faq-q.open { background: var(--gold-pale); color: var(--forest); }
+    .faq-arrow { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 14px; transition: transform 0.3s, background 0.2s; }
+    .faq-q.open .faq-arrow { transform: rotate(180deg); background: var(--gold-pale); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-a-inner { padding: 0 28px 24px; font-size: 14.5px; color: var(--muted); line-height: 1.85; }
+
+    /* NEWSLETTER */
+    .newsletter-strip { background: var(--ink); color: white; padding: 60px 7%; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; position: relative; overflow: hidden; }
+    .newsletter-strip::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 40% 60% at 20% 50%, rgba(26,58,42,0.3) 0%, transparent 60%); pointer-events: none; }
+    .newsletter-strip h3 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 700; letter-spacing: -0.5px; position: relative; }
+    .newsletter-strip p { font-size: 15px; opacity: 0.5; margin-top: 6px; position: relative; }
+    .nl-form { display: flex; border-radius: 50px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15); min-width: 340px; background: rgba(255,255,255,0.06); position: relative; }
+    .nl-form input { flex: 1; background: transparent; border: none; padding: 14px 22px; font-size: 14px; color: white; font-family: 'Instrument Sans', sans-serif; outline: none; }
+    .nl-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .nl-form button { background: var(--gold); color: white; border: none; padding: 14px 26px; font-size: 13px; font-weight: 800; cursor: pointer; font-family: 'Instrument Sans', sans-serif; transition: opacity 0.2s; white-space: nowrap; letter-spacing: 0.5px; }
+    .nl-form button:hover { opacity: 0.9; }
+
+    footer { background: var(--ink); color: white; position: relative; overflow: hidden; }
+    footer::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 60% at 10% 20%, rgba(26,58,42,0.25) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 90% 80%, rgba(184,146,42,0.10) 0%, transparent 60%); pointer-events: none; }
+    .footer-accent { height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 64px; padding: 80px 7% 60px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 1; }
+    .footer-brand-logo { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 700; letter-spacing: -1px; color: white; margin-bottom: 8px; }
+    .footer-brand-logo span { color: var(--gold); }
+    .footer-brand-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 20px; }
+    .footer-brand p { font-size: 13.5px; opacity: 0.4; line-height: 2; margin-bottom: 28px; }
+    .footer-pay-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pay-badge { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 6px 12px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+    .footer-col-title { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 2.5px; color: var(--gold); padding-bottom: 14px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .footer-col ul { list-style: none; }
+    .footer-col li { padding: 8px 0; font-size: 13.5px; opacity: 0.45; border-bottom: 1px solid rgba(255,255,255,0.03); cursor: pointer; transition: opacity 0.2s, padding-left 0.2s; }
+    .footer-col li:last-child { border-bottom: none; }
+    .footer-col li:hover { opacity: 0.85; padding-left: 6px; }
+    .footer-col li a { text-decoration: none; color: inherit; }
+    .footer-connect-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(184,146,42,0.2); border-radius: 20px; padding: 32px 28px; }
+    .footer-addr { font-size: 12.5px; opacity: 0.4; line-height: 2; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-addr strong { color: rgba(255,255,255,0.7); display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; opacity: 1; }
+    .social-row { display: flex; gap: 10px; margin-top: 20px; }
+    .social-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); text-decoration: none; transition: all 0.2s; }
+    .social-icon:hover { background: var(--gold); border-color: var(--gold); color: white; transform: translateY(-2px); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 24px 7%; flex-wrap: wrap; gap: 16px; position: relative; z-index: 1; }
+    .footer-bottom p { font-size: 12px; opacity: 0.25; }
+    .footer-bottom-links { display: flex; gap: 24px; align-items: center; }
+    .footer-bottom-links a { font-size: 11.5px; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: var(--gold); }
+    .footer-bottom-links .sep { width: 1px; height: 12px; background: rgba(255,255,255,0.12); }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    @media (max-width: 1100px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .locations-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .page-hero { padding: 72px 5% 60px; }
+      .contact-form-wrap { padding: 36px 28px; }
+      .form-row { grid-template-columns: 1fr; }
+      .newsletter-strip { flex-direction: column; }
+      .nl-form { min-width: unset; width: 100%; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-bottom-links { justify-content: center; flex-wrap: wrap; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 2.2rem; }
+      .form-tabs { gap: 6px; }
+      .location-card { padding: 32px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement">
+    <span class="ann-dot"></span>
+    Premium baking yeast — natural, nutritious &amp; eco-packaged &nbsp;|&nbsp;
+    <a href="contact.html">Order now →</a>
+    <span class="ann-dot"></span>
+  </div>
+
+  <!-- NAV - Consistent with index.html -->
+  <nav id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <img src="img/logo_remove.png" alt="STK Royal Logo" onerror="this.style.display='none'">
+      <span class="nav-logo-text">STK<span> Royal</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="product.html">Product</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="signup.html">Sign Up</a></li>
+      <li><a href="login.html" class="nav-cta">Login</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="product.html">Product</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="login.html" class="m-cta">Login</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Contact</span>
+      </div>
+      <div class="page-hero-label">Get in Touch</div>
+      <h1>We're Here to<br><em>Help You Bake</em></h1>
+      <p>Whether you're placing an order, enquiring about wholesale, or simply have a question — our team is ready. Reach out and we'll respond within 24 hours.</p>
+    </div>
+  </section>
+
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">📞 Call Us <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">💬 WhatsApp Us <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">📍 Visit Nigeria HQ <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">🌐 International Office <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">📦 Bulk Orders Welcome <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">🤝 Distribution Partnerships <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">📞 Call Us <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">💬 WhatsApp Us <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">📍 Visit Nigeria HQ <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">🌐 International Office <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">📦 Bulk Orders Welcome <span class="marquee-sep">◆</span></span>
+      <span class="marquee-item">🤝 Distribution Partnerships <span class="marquee-sep">◆</span></span>
+    </div>
+  </div>
+
+  <!-- CONTACT MAIN -->
+  <section class="contact-main">
+    <div class="contact-layout">
+
+      <!-- INFO COLUMN -->
+      <div class="contact-info-col">
+        <div class="info-card reveal">
+          <div class="info-card-icon">📞</div>
+          <h4>Call to Order</h4>
+          <a class="phone-link" href="tel:+2349031787037">+234 903 178 7037</a>
+          <a class="phone-link" href="tel:+2348143642387">+234 814 364 2387</a>
+          <a class="phone-link" href="tel:+2349081707267">+234 908 170 7267</a>
+          <a class="wa-btn" href="https://wa.me/2349031787037" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+        </div>
+
+        <div class="info-card reveal reveal-delay-1">
+          <div class="info-card-icon">⏰</div>
+          <h4>Business Hours</h4>
+          <div class="hours-row"><span class="hours-day">Monday – Friday</span><span class="hours-time open">8:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time open">9:00 AM – 4:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">Closed</span></div>
+          <div class="hours-row"><span class="hours-day">WhatsApp</span><span class="hours-time open">24 / 7</span></div>
+        </div>
+
+        <div class="info-card reveal reveal-delay-2">
+          <div class="info-card-icon">📦</div>
+          <h4>Order Information</h4>
+          <p>Minimum order: <strong style="color:var(--ink-2)">1 unit (₦530)</strong></p>
+          <p>Carton: <strong style="color:var(--ink-2)">36 units · ₦18,260</strong></p>
+          <p>Bulk & wholesale pricing available for resellers, distributors, and commercial kitchens.</p>
+        </div>
+
+        <div class="info-card reveal reveal-delay-3">
+          <div class="info-card-icon">🌐</div>
+          <h4>Follow STK Royal</h4>
+          <p>Stay updated on promotions, new products and baking tips.</p>
+          <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+            <a href="https://www.facebook.com/StkNigeria" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border-radius:8px; background:var(--cream); border:1px solid var(--border); font-size:12.5px; font-weight:700; color:var(--ink-2); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)'; this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--ink-2)'">📘 Facebook</a>
+            <a href="https://twitter.com/StkNG" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border-radius:8px; background:var(--cream); border:1px solid var(--border); font-size:12.5px; font-weight:700; color:var(--ink-2); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)'; this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--ink-2)'">𝕏 Twitter</a>
+            <a href="https://www.instagram.com/Stkng/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border-radius:8px; background:var(--cream); border:1px solid var(--border); font-size:12.5px; font-weight:700; color:var(--ink-2); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)'; this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--ink-2)'">📷 Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM COLUMN -->
+      <div class="contact-form-wrap reveal reveal-delay-1">
+        <div class="form-header">
+          <h3>Send Us a <em>Message</em></h3>
+          <p>Fill in the form below and our team will respond within 24 hours. For urgent orders, please call or WhatsApp directly.</p>
+        </div>
+        <div class="form-tabs">
+          <div class="form-tab active" onclick="setTab(this,'order')">Place an Order</div>
+          <div class="form-tab" onclick="setTab(this,'bulk')">Bulk / Wholesale</div>
+          <div class="form-tab" onclick="setTab(this,'distribution')">Distribution</div>
+          <div class="form-tab" onclick="setTab(this,'general')">General Enquiry</div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" id="fname" placeholder="Your first name"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" id="lname" placeholder="Your last name"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Email Address</label><input type="email" id="femail" placeholder="your@email.com"></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" id="fphone" placeholder="+234 000 000 0000"></div>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select id="fsubject">
+            <option value="order">Place an Order</option>
+            <option value="bulk">Bulk / Wholesale Enquiry</option>
+            <option value="distribution">Distribution Partnership</option>
+            <option value="general">General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-group" id="quantityGroup">
+          <label>Quantity (Units)</label>
+          <input type="number" id="fqty" placeholder="e.g. 36 (1 carton)" min="1">
+        </div>
+        <div class="form-group"><label>Message</label><textarea id="fmessage" placeholder="Tell us what you need — we're here to help..."></textarea></div>
+        <button class="form-submit" onclick="submitForm()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send Message
+        </button>
+        <div class="form-msg" id="formMsg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section class="locations-section">
+    <div style="max-width: 100%">
+      <span class="section-label">Find Us</span>
+      <h2 class="section-title reveal" style="margin-bottom: 8px">Our <em>Offices</em></h2>
+      <p class="section-sub reveal reveal-delay-1">Two locations, one shared commitment to quality and service.</p>
+      <div class="locations-grid">
+        <div class="location-card nigeria reveal">
+          <span class="loc-flag">🇳🇬</span>
+          <div class="loc-country">Nigeria — Headquarters</div>
+          <h4>STK Royal Nigeria HQ</h4>
+          <p class="loc-address">
+            STK Building, Beside Creative Minds Nursery,<br>
+            Opposite C. Zard, Magazine Road,<br>
+            Jericho, Ibadan, Oyo State, Nigeria.
+          </p>
+          <div class="loc-phones">
+            <a class="loc-phone" href="tel:+2349031787037">📞 +234 903 178 7037</a>
+            <a class="loc-phone" href="tel:+2348143642387">📞 +234 814 364 2387</a>
+            <a class="loc-phone" href="tel:+2349081707267">📞 +234 908 170 7267</a>
+            <a class="loc-phone" href="https://wa.me/2349031787037" target="_blank" rel="noopener" style="color:#25D366">💬 WhatsApp</a>
+          </div>
+        </div>
+        <div class="location-card intl reveal reveal-delay-1">
+          <span class="loc-flag">🇺🇸</span>
+          <div class="loc-country">United States — International</div>
+          <h4>STK Africa Inc.</h4>
+          <p class="loc-address">
+            256 Chapman Road, STE 105-4,<br>
+            Newark, New Castle 19702,<br>
+            United States of America.
+          </p>
+          <div class="loc-phones">
+            <p style="font-size:13.5px; color: var(--muted); line-height:1.7;">Our international office handles global distribution partnerships, export enquiries, and international wholesale orders. Contact us via the form above or WhatsApp for international queries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-header">
+      <span class="section-label">Common Questions</span>
+      <h2 class="section-title reveal">Frequently Asked <em>Questions</em></h2>
+      <p class="section-sub reveal reveal-delay-1">Everything you need to know about ordering, delivery, and STK Royal Yeast.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">What is the minimum order quantity? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">You can order as little as a single unit at ₦530. A standard carton contains 36 units priced at ₦18,260. We also offer bulk and wholesale pricing for resellers and commercial kitchens — contact us for a custom quote.</div></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you offer nationwide delivery in Nigeria? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes, we deliver across Nigeria. Delivery timelines and costs vary by location. Contact us via phone or WhatsApp to confirm delivery to your area and get an accurate delivery quote.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Is STK Royal Yeast safe for children? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely. STK Royal is made from naturally sourced ingredients with no artificial additives, making it completely safe for all ages — including children. It's nutritious, wholesome, and trusted by Nigerian families.</div></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I become a distributor for STK Royal? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes! We welcome distribution partnerships across Nigeria and internationally. Select "Distribution Partnership" from the subject dropdown in our contact form, or call us directly to discuss terms and minimum order requirements.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I pay for my order? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">We accept payment via bank transfer, Paystack (debit card / online), Visa, and Mastercard. Details will be provided when you confirm your order via phone or WhatsApp.</div></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-q" onclick="toggleFaq(this)">What makes STK Royal different from other yeast brands? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">STK Royal is distinguished by its 100% natural ingredients, recyclable white and cream packaging, baking-grade quality, and versatility across dishes. It's formulated to deliver consistent, professional results whether you're a home baker or an expert chef.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter-strip">
+    <div>
+      <h3>Stay in the Loop</h3>
+      <p>Fresh deals, new product launches &amp; exclusive offers — straight to your inbox.</p>
+    </div>
+    <form class="nl-form" onsubmit="nlSubmit(event)">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit">Subscribe →</button>
+    </form>
+  </div>
+
+  <footer>
+    <div class="footer-accent"></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">STK<span> Royal</span></div>
+        <div class="footer-brand-tag">The Baking Gold Standard</div>
+        <p>Premium instant dry yeast made from naturally sourced ingredients. Nutritious, safe, and packaged in 100% recyclable sachets.</p>
+        <div class="footer-pay-badges">
+          <span class="pay-badge">Visa</span>
+          <span class="pay-badge">Mastercard</span>
+          <span class="pay-badge">Paystack</span>
+          <span class="pay-badge">Bank Transfer</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Products</div>
+        <ul>
+          <li>STK Royal Small</li>
+          <li>STK Royal Large</li>
+          <li>Wholesale Packs</li>
+          <li>Bulk Orders</li>
+          <li>Distribution</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li>Return Policy</li>
+          <li>Delivery Policy</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div class="footer-connect-box">
+        <div class="footer-col-title">Connect With Us</div>
+        <div class="footer-addr"><strong>Nigeria HQ</strong>Beside Creative Minds Nursery, Opposite C. Zard, Magazine Road, Jericho, Ibadan, Nigeria.</div>
+        <div class="footer-addr"><strong>International</strong>256 Chapman Road, STE 105-4, Newark, New Castle 19702, United States.</div>
+        <div class="social-row">
+          <a class="social-icon" href="https://www.facebook.com/StkNigeria" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a class="social-icon" href="https://twitter.com/StkNG" target="_blank" rel="noopener" aria-label="Twitter"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a class="social-icon" href="https://www.instagram.com/Stkng/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a class="social-icon" href="https://wa.me/2349031787037" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <p>© 2026 STK Royal. All Rights Reserved.</p>
+        <p>A product of STK Africa Inc, Newark, New Castle, United States.</p>
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a><span class="sep"></span>
+        <a href="#">Terms &amp; Conditions</a><span class="sep"></span>
+        <a href="#">Delivery Policy</a><span class="sep"></span>
+        <a href="#">Returns</a>
+      </div>
+    </div>
+  </footer>
+
+ <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+    
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    
+    hamburger.addEventListener('click', function() {
+      this.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+
+    // Close mobile nav when clicking a link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+
+    let activeTab = 'order';
+    function setTab(el, value) {
+      document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      activeTab = value;
+      document.getElementById('fsubject').value = value;
+      document.getElementById('quantityGroup').style.display = (value === 'order' || value === 'bulk') ? 'block' : 'none';
+    }
+
+    function toggleFaq(el) {
+      const answer = el.nextElementSibling;
+      const isOpen = el.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(q => {
+        q.classList.remove('open');
+        q.nextElementSibling.style.maxHeight = null;
+      });
+      if (!isOpen) {
+        el.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    }
+
+    function submitForm() {
+      const fname = document.getElementById('fname').value.trim();
+      const femail = document.getElementById('femail').value.trim();
+      const fmessage = document.getElementById('fmessage').value.trim();
+      const msg = document.getElementById('formMsg');
+      if (!fname || !femail || !fmessage) {
+        msg.textContent = '⚠️ Please fill in your name, email, and message.';
+        msg.className = 'form-msg error'; msg.style.display = 'block'; return;
+      }
+      msg.textContent = "✅ Thank you! Your message has been received. We'll be in touch within 24 hours.";
+      msg.className = 'form-msg success'; msg.style.display = 'block';
+      setTimeout(() => { msg.style.display = 'none'; }, 6000);
+    }
+
+    function nlSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = '✓ Subscribed!';
+      setTimeout(() => { btn.textContent = 'Subscribe →'; e.target.reset(); }, 3000);
+    }
+
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  </script>
+</body>
+</html>

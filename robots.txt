@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Disallow auth pages from indexing
+Disallow: /login.html
+Disallow: /signup.html
+
+# Crawl delay for polite crawling
+Crawl-delay: 10
+
+Sitemap: https://www.stkroyal.com.ng/sitemap.xml

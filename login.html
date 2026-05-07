@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <title>Sign In · STK Royal | Premium Baking Gold Standard</title>
+  <meta name="description" content="Log into your STK Royal account. Track orders, access member pricing, and enjoy the gold standard in natural baking yeast.">
+  <meta property="og:title" content="Sign In · STK Royal — The Baking Gold Standard">
+  <meta property="og:description" content="Access your STK Royal account. Premium instant dry yeast, naturally sourced, 100% recyclable.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1a3a2a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,600;1,9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0e0c09;
+      --ink-2: #2b2620;
+      --cream: #faf7f2;
+      --cream-2: #f3ede3;
+      --warm-white: #fffef9;
+      --gold: #b8922a;
+      --gold-light: #d4ab4a;
+      --gold-pale: #f5e9c8;
+      --forest: #1a3a2a;
+      --forest-mid: #2d5a40;
+      --forest-light: #4a8c62;
+      --mint-pale: #e8f5ed;
+      --muted: #7a6f62;
+      --border: rgba(14,12,9,0.08);
+      --border-gold: rgba(184,146,42,0.25);
+      --shadow-xs: 0 1px 4px rgba(10,36,20,0.04);
+      --shadow-sm: 0 4px 16px rgba(14,12,9,0.06);
+      --shadow-md: 0 12px 40px rgba(14,12,9,0.10);
+      --shadow-lg: 0 28px 72px rgba(14,12,9,0.14);
+      --r: 18px;
+      --r-lg: 32px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Instrument Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--cream-2); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    .auth-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      max-width: 1200px;
+      min-height: 85vh;
+      margin: 32px;
+      background: var(--warm-white);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    /* LEFT BRAND PANEL — refined with product image */
+    .auth-brand {
+      background: linear-gradient(160deg, #0d2218 0%, #1a3a2a 35%, #0f2819 100%);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 40px;
+      color: white;
+      overflow: hidden;
+    }
+    .auth-brand::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 80% 30%, rgba(184,146,42,0.17) 0%, transparent 55%),
+                  radial-gradient(ellipse 50% 50% at 20% 80%, rgba(26,58,42,0.6) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .brand-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(184,146,42,0.15);
+      border: 1px solid rgba(184,146,42,0.3);
+      color: var(--gold-light);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 32px;
+      backdrop-filter: blur(5px);
+    }
+    .brand-badge .dot {
+      width: 6px; height: 6px; background: var(--gold-light); border-radius: 50%;
+      animation: softPulse 2s infinite;
+    }
+    @keyframes softPulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    
+    .product-image-wrapper {
+      margin-bottom: 32px;
+      filter: drop-shadow(0 30px 35px rgba(0,0,0,0.5));
+      animation: floatSlow 6s ease-in-out infinite;
+      max-width: 260px;
+      width: 80%;
+    }
+    .product-image-wrapper img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      opacity: 0.95;
+    }
+    @keyframes floatSlow {
+      0%,100%{ transform: translateY(0) rotate(0deg); }
+      50%{ transform: translateY(-12px) rotate(0.5deg); }
+    }
+    .brand-title {
+      font-family: 'Fraunces', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      color: white;
+    }
+    .brand-title em {
+      font-style: italic;
+      color: var(--gold-light);
+      font-weight: 300;
+    }
+    .brand-desc {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      max-width: 300px;
+      margin-bottom: 32px;
+    }
+    .brand-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .feat-chip {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* RIGHT FORM PANEL */
+    .auth-form-section {
+      background: white;
+      padding: 60px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+    .form-inner {
+      max-width: 420px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--forest); }
+    
+    .form-header {
+      margin-bottom: 36px;
+    }
+    .form-header h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--ink);
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+    }
+    .form-header h1 em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 300;
+    }
+    .form-header p {
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .form-header p a {
+      color: var(--forest);
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .form-header p a:hover { color: var(--gold); }
+
+    .input-group {
+      margin-bottom: 22px;
+    }
+    .input-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--ink-2);
+      margin-bottom: 8px;
+    }
+    .input-field {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      font-size: 16px;
+      font-family: 'Instrument Sans', sans-serif;
+      color: var(--ink);
+      outline: none;
+      transition: all 0.25s ease;
+    }
+    .input-field:focus {
+      border-color: var(--gold);
+      background: white;
+      box-shadow: 0 0 0 4px rgba(184,146,42,0.08);
+    }
+    .password-wrapper {
+      position: relative;
+    }
+    .password-wrapper .input-field {
+      padding-right: 50px;
+    }
+    .toggle-vis {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: var(--muted);
+      padding: 8px;
+      transition: color 0.2s;
+    }
+    .toggle-vis:hover { color: var(--forest); }
+
+    .row-between {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      color: var(--ink-2);
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .checkbox-label input {
+      width: 17px;
+      height: 17px;
+      accent-color: var(--forest);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .forgot-link {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--forest);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .forgot-link:hover { color: var(--gold); }
+
+    .btn-primary {
+      width: 100%;
+      padding: 16px 24px;
+      background: var(--forest);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Instrument Sans', sans-serif;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 28px rgba(26,58,42,0.25);
+      margin-bottom: 28px;
+      letter-spacing: 0.3px;
+    }
+    .btn-primary:hover {
+      background: var(--forest-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(26,58,42,0.35);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .divider span {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .social-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px;
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-2);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+    .social-btn:hover {
+      background: white;
+      border-color: var(--gold);
+      color: var(--forest);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .terms-text {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .terms-text a {
+      color: var(--forest);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .terms-text a:hover { color: var(--gold); }
+
+    .form-message {
+      margin-bottom: 16px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      display: none;
+    }
+    .form-message.success {
+      background: var(--mint-pale);
+      color: var(--forest);
+      border: 1px solid rgba(26,58,42,0.15);
+    }
+    .form-message.error {
+      background: #fff0f0;
+      color: #c53030;
+      border: 1px solid rgba(197,48,48,0.2);
+    }
+
+    @media (max-width: 900px) {
+      .auth-container {
+        grid-template-columns: 1fr;
+        margin: 16px;
+        min-height: auto;
+      }
+      .auth-brand {
+        padding: 48px 32px;
+      }
+      .product-image-wrapper {
+        max-width: 200px;
+        margin-bottom: 24px;
+      }
+      .brand-title {
+        font-size: 2.4rem;
+      }
+      .auth-form-section {
+        padding: 48px 36px;
+      }
+    }
+    @media (max-width: 480px) {
+      .auth-form-section {
+        padding: 40px 24px;
+      }
+      .form-header h1 {
+        font-size: 2.2rem;
+      }
+      .social-buttons {
+        flex-direction: column;
+      }
+      .auth-brand {
+        padding: 40px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="auth-container">
+    <!-- Left: Brand & Product Image -->
+    <div class="auth-brand">
+      <div class="brand-content">
+        <div class="brand-badge">
+          <span class="dot"></span> The Baking Gold Standard
+        </div>
+        <div class="product-image-wrapper">
+          <img src="img/stkroyal.png" alt="STK Royal Instant Dry Yeast – premium natural baking yeast" onerror="this.outerHTML='<div style=\'color:white;font-size:14px;padding:20px;\'>STK Royal Yeast</div>'">
+        </div>
+        <h2 class="brand-title">STK <em>Royal</em></h2>
+        <p class="brand-desc">Naturally sourced, 100% recyclable packaging. The premium yeast for chefs & home bakers.</p>
+        <div class="brand-features">
+          <span class="feat-chip">🌿 Natural</span>
+          <span class="feat-chip">♻️ Eco</span>
+          <span class="feat-chip">🍞 Baking Grade</span>
+          <span class="feat-chip">✅ Safe</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Login Form -->
+    <div class="auth-form-section">
+      <div class="form-inner">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <div class="form-header">
+          <h1>Welcome <em>back</em></h1>
+          <p>New to STK Royal? <a href="signup.html">Create an account →</a></p>
+        </div>
+
+        <div id="formMessage" class="form-message"></div>
+
+        <div class="input-group">
+          <label class="input-label" for="email">Email Address</label>
+          <input class="input-field" type="email" id="email" placeholder="you@example.com" autocomplete="email" inputmode="email">
+        </div>
+
+        <div class="input-group">
+          <label class="input-label" for="password">Password</label>
+          <div class="password-wrapper">
+            <input class="input-field" type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
+            <button class="toggle-vis" id="togglePassword" type="button" aria-label="Toggle password visibility">👁️</button>
+          </div>
+        </div>
+
+        <div class="row-between">
+          <label class="checkbox-label">
+            <input type="checkbox" checked> Remember me
+          </label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+
+        <button class="btn-primary" id="loginButton" type="button">
+          <span id="btnText">Sign In</span>
+          <span id="btnSpinner" style="display:none;">⏳</span>
+        </button>
+
+        <div class="divider"><span>or continue with</span></div>
+
+        <div class="social-buttons">
+          <button class="social-btn" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Google
+          </button>
+          <button class="social-btn" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </button>
+        </div>
+
+        <p class="terms-text">
+          By signing in, you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // Toggle password visibility
+      const toggleBtn = document.getElementById('togglePassword');
+      const passwordInput = document.getElementById('password');
+      
+      toggleBtn.addEventListener('click', function() {
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          toggleBtn.textContent = '🙈';
+        } else {
+          passwordInput.type = 'password';
+          toggleBtn.textContent = '👁️';
+        }
+      });
+
+      // Form submission simulation with advanced feedback
+      const loginBtn = document.getElementById('loginButton');
+      const btnText = document.getElementById('btnText');
+      const btnSpinner = document.getElementById('btnSpinner');
+      const formMessage = document.getElementById('formMessage');
+      const emailInput = document.getElementById('email');
+      const passwordField = document.getElementById('password');
+
+      function showMessage(text, type) {
+        formMessage.textContent = text;
+        formMessage.className = 'form-message ' + type;
+        formMessage.style.display = 'block';
+        setTimeout(() => {
+          formMessage.style.display = 'none';
+        }, 5000);
+      }
+
+      loginBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const email = emailInput.value.trim();
+        const password = passwordField.value.trim();
+
+        // Basic validation
+        if (!email || !password) {
+          showMessage('⚠️ Please enter both email and password.', 'error');
+          return;
+        }
+        if (!email.includes('@') || !email.includes('.')) {
+          showMessage('⚠️ Please enter a valid email address.', 'error');
+          return;
+        }
+        if (password.length < 6) {
+          showMessage('⚠️ Password must be at least 6 characters.', 'error');
+          return;
+        }
+
+        // Loading state
+        loginBtn.disabled = true;
+        btnText.textContent = 'Signing in';
+        btnSpinner.style.display = 'inline-block';
+        
+        // Simulate network request
+        setTimeout(() => {
+          // Success simulation (in production, integrate real authentication)
+          showMessage('✅ Welcome back! Redirecting to your dashboard...', 'success');
+          btnText.textContent = '✓ Success';
+          btnSpinner.style.display = 'none';
+          
+          // Demo redirect (could be replaced with real auth redirect)
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 1800);
+          
+        }, 1600);
+      });
+
+      // Social login handlers (demo)
+      const socialButtons = document.querySelectorAll('.social-btn');
+      socialButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const provider = this.textContent.trim();
+          showMessage(`🔐 Connecting with ${provider}... (demo mode)`, 'success');
+        });
+      });
+
+      // Pre-fill demo hint (optional)
+      console.log('STK Royal — Sophisticated login ready.');
+    })();
+  </script>
+</body>
+</html>

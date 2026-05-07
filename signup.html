@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — STK Royal | Join the Baking Community</title>
+  <meta name="description" content="Sign up for an STK Royal account. Get access to exclusive offers, wholesale pricing, and early product launches.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,600;1,9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0e0c09; --ink-2: #2b2620; --cream: #faf7f2; --cream-2: #f3ede3;
+      --warm-white: #fffef9; --gold: #b8922a; --gold-light: #d4ab4a;
+      --gold-pale: #f5e9c8; --forest: #1a3a2a; --forest-mid: #2d5a40;
+      --forest-light: #4a8c62; --mint-pale: #e8f5ed; --muted: #7a6f62;
+      --border: rgba(14,12,9,0.08); --border-gold: rgba(184,146,42,0.25);
+      --shadow-sm: 0 2px 16px rgba(14,12,9,0.06);
+      --shadow-md: 0 12px 48px rgba(14,12,9,0.10);
+      --shadow-lg: 0 32px 96px rgba(14,12,9,0.14);
+      --r: 16px; --r-lg: 24px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; min-height: 100vh; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--cream-2); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* NAV - Consistent with index.html */
+    nav { position: sticky; top: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 76px; background: rgba(250,247,242,0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s; }
+    nav.scrolled { box-shadow: var(--shadow-sm); }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-logo-text { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--forest); letter-spacing: -0.5px; }
+    .nav-logo-text span { color: var(--gold); }
+    .nav-links { display: flex; gap: 40px; align-items: center; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--ink-2); font-size: 13.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; transition: color 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.25s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-links a.active { color: var(--gold); }
+    .nav-links a.active::after { transform: scaleX(1); }
+    .nav-cta { background: var(--forest) !important; color: white !important; padding: 11px 26px !important; border-radius: 50px !important; box-shadow: 0 4px 20px rgba(26,58,42,0.3) !important; }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--forest-mid) !important; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--forest); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; flex-direction: column; background: var(--warm-white); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md); }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { text-decoration: none; color: var(--ink-2); font-size: 15px; font-weight: 600; padding: 16px 5%; border-bottom: 1px solid var(--border); transition: background 0.2s; }
+    .mobile-nav a:hover { background: var(--cream-2); }
+    .mobile-nav .m-cta { background: var(--forest); color: white !important; text-align: center; margin: 12px 5% 20px; border-radius: 12px; border-bottom: none !important; }
+    .mobile-nav a.active { color: var(--forest); background: var(--mint-pale); border-left: 3px solid var(--forest); padding-left: calc(5% - 3px); }
+
+    /* LAYOUT */
+    .auth-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 76px); }
+    
+    /* LEFT PANEL */
+    .auth-panel-left { background: linear-gradient(150deg, var(--forest) 0%, #0d2218 55%, #0a1a10 100%); color: white; padding: 60px 56px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+    .auth-panel-left::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 80% 20%, rgba(184,146,42,0.15) 0%, transparent 55%), radial-gradient(ellipse 50% 50% at 20% 80%, rgba(26,58,42,0.4) 0%, transparent 55%); pointer-events: none; }
+    .apl-top { position: relative; z-index: 1; }
+    .apl-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-bottom: 64px; }
+    .apl-logo-text { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 700; color: white; letter-spacing: -0.5px; }
+    .apl-logo-text span { color: var(--gold-light); }
+    .apl-logo img { height: 40px; width: auto; }
+    .apl-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(184,146,42,0.15); color: var(--gold-light); padding: 8px 18px; border-radius: 50px; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border: 1px solid rgba(184,146,42,0.25); margin-bottom: 28px; width: fit-content; }
+    .apl-top h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 3vw, 3rem); font-weight: 700; line-height: 1.1; letter-spacing: -1px; margin-bottom: 20px; }
+    .apl-top h2 em { font-style: italic; color: var(--gold-light); font-weight: 300; }
+    .apl-top p { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.8; max-width: 400px; }
+    .apl-benefits { position: relative; z-index: 1; margin-top: 48px; }
+    .apl-benefit { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .apl-benefit:last-child { border-bottom: none; }
+    .apl-ben-icon { width: 40px; height: 40px; border-radius: 12px; background: rgba(184,146,42,0.15); border: 1px solid rgba(184,146,42,0.25); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .apl-ben-text h5 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 3px; }
+    .apl-ben-text p { font-size: 12.5px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+    .apl-product { position: relative; z-index: 1; display: flex; justify-content: center; margin-top: 48px; }
+    .apl-product img { max-width: 180px; filter: drop-shadow(0 20px 60px rgba(0,0,0,0.5)); animation: floatY 5s ease-in-out infinite; opacity: 0.9; }
+    @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+    .apl-quote { position: relative; z-index: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--r); padding: 24px 28px; margin-top: 40px; }
+    .apl-quote blockquote { font-size: 14px; font-style: italic; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    .apl-quote cite { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold-light); margin-top: 10px; font-style: normal; }
+
+    /* RIGHT PANEL */
+    .auth-panel-right { background: var(--warm-white); padding: 60px 56px; display: flex; flex-direction: column; justify-content: center; overflow-y: auto; }
+    .auth-nav-right { display: flex; justify-content: flex-end; margin-bottom: 40px; }
+    .auth-nav-right a { font-size: 13.5px; font-weight: 600; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .auth-nav-right a:hover { color: var(--forest); }
+    .auth-nav-right a span { color: var(--gold); font-weight: 700; }
+    .auth-form-wrap { max-width: 480px; width: 100%; }
+    .auth-form-title { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 700; color: var(--ink); letter-spacing: -0.5px; margin-bottom: 8px; }
+    .auth-form-title em { font-style: italic; color: var(--gold); font-weight: 300; }
+    .auth-form-sub { font-size: 15px; color: var(--muted); margin-bottom: 36px; line-height: 1.7; }
+    
+    /* ACCOUNT TYPE */
+    .account-type { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 28px; }
+    .acct-card { border: 2px solid var(--border); border-radius: var(--r); padding: 16px 14px; cursor: pointer; transition: all 0.2s; text-align: center; }
+    .acct-card:hover { border-color: var(--gold); }
+    .acct-card.selected { border-color: var(--forest); background: var(--mint-pale); }
+    .acct-icon { font-size: 24px; display: block; margin-bottom: 8px; }
+    .acct-label { font-size: 12px; font-weight: 700; color: var(--ink-2); }
+    .acct-desc { font-size: 10.5px; color: var(--muted); margin-top: 3px; }
+
+    .form-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin: 24px 0 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-2); margin-bottom: 7px; }
+    .form-group input, .form-group select { width: 100%; padding: 13px 16px; border: 2px solid var(--border); border-radius: 12px; font-size: 15px; font-family: 'Instrument Sans', sans-serif; color: var(--ink); background: var(--cream); transition: border-color 0.2s, background 0.2s; outline: none; }
+    .form-group input:focus, .form-group select:focus { border-color: var(--gold); background: white; }
+    .form-group input.error { border-color: #e53e3e; }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a6f62' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; cursor: pointer; }
+    .input-wrap { position: relative; }
+    .input-wrap input { padding-right: 48px; }
+    .input-icon { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 16px; color: var(--muted); transition: color 0.2s; user-select: none; }
+    .input-icon:hover { color: var(--forest); }
+    .password-strength { height: 4px; border-radius: 2px; background: var(--cream-2); margin-top: 8px; overflow: hidden; }
+    .strength-bar { height: 100%; width: 0; border-radius: 2px; transition: width 0.4s ease, background 0.4s; }
+    .strength-text { font-size: 11px; color: var(--muted); margin-top: 4px; }
+    .terms-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+    .terms-row input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--forest); cursor: pointer; flex-shrink: 0; }
+    .terms-row label { font-size: 13px; color: var(--muted); cursor: pointer; line-height: 1.6; }
+    .terms-row label a { color: var(--forest); font-weight: 600; text-decoration: none; }
+    .terms-row label a:hover { color: var(--gold); }
+    .submit-btn { width: 100%; padding: 17px; background: var(--forest); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Instrument Sans', sans-serif; display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.25s; box-shadow: 0 8px 32px rgba(26,58,42,0.3); margin-bottom: 20px; }
+    .submit-btn:hover { background: var(--forest-mid); transform: translateY(-2px); }
+    .submit-btn:disabled { background: var(--muted); cursor: not-allowed; transform: none; box-shadow: none; }
+    .divider { display: flex; align-items: center; gap: 16px; margin: 20px 0; }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .divider span { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+    .social-signup { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+    .social-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border: 1.5px solid var(--border); border-radius: 12px; background: white; font-size: 13.5px; font-weight: 600; color: var(--ink-2); cursor: pointer; transition: all 0.2s; font-family: 'Instrument Sans', sans-serif; }
+    .social-btn:hover { border-color: var(--gold); color: var(--forest); background: var(--gold-pale); }
+    .auth-switch { text-align: center; font-size: 14px; color: var(--muted); }
+    .auth-switch a { color: var(--forest); font-weight: 700; text-decoration: none; }
+    .auth-switch a:hover { color: var(--gold); }
+    .form-msg { padding: 14px 20px; border-radius: 12px; font-size: 14px; font-weight: 600; margin-bottom: 16px; display: none; }
+    .form-msg.success { background: var(--mint-pale); color: var(--forest); border: 1px solid rgba(26,58,42,0.15); }
+    .form-msg.error { background: #fff0f0; color: #c53030; border: 1px solid rgba(197,48,48,0.2); }
+    .trust-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; justify-content: center; }
+    .trust-chip { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; color: var(--muted); }
+    .trust-chip::before { content: '✓'; color: var(--forest); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .auth-layout { grid-template-columns: 1fr; }
+      .auth-panel-left { display: none; }
+      .auth-panel-right { padding: 48px 32px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 480px) {
+      .auth-panel-right { padding: 32px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .account-type { grid-template-columns: 1fr; }
+      .social-signup { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV - Consistent with index.html -->
+  <nav id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <img src="img/logo_remove.png" alt="STK Royal Logo" onerror="this.style.display='none'">
+      <span class="nav-logo-text">STK<span> Royal</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="product.html">Product</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="signup.html" class="active">Sign Up</a></li>
+      <li><a href="login.html" class="nav-cta">Login</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="product.html">Product</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="signup.html" class="active">Sign Up</a>
+    <a href="login.html" class="m-cta">Login</a>
+  </div>
+
+<div class="auth-layout">
+
+  <!-- LEFT PANEL -->
+  <div class="auth-panel-left">
+    <div class="apl-top">
+      <a class="apl-logo" href="index.html">
+        <img src="img/logo_remove.png" alt="STK Royal" onerror="this.style.display='none'">
+        <span class="apl-logo-text">STK<span> Royal</span></span>
+      </a>
+      <div class="apl-badge">✦ The Baking Gold Standard</div>
+      <h2>Join the STK<br><em>Royal Family</em></h2>
+      <p>Create your account and unlock exclusive offers, early product launches, and order management — built for bakers who demand the best.</p>
+    </div>
+    <div class="apl-benefits">
+      <div class="apl-benefit">
+        <div class="apl-ben-icon">🎁</div>
+        <div class="apl-ben-text"><h5>Exclusive Member Offers</h5><p>Access discounts and promotions only available to registered members.</p></div>
+      </div>
+      
+      <div class="apl-benefit">
+        <div class="apl-ben-icon">🏪</div>
+        <div class="apl-ben-text"><h5>Wholesale Pricing</h5><p>Registered trade customers get access to bulk and wholesale pricing.</p></div>
+      </div>
+      <div class="apl-benefit">
+        <div class="apl-ben-icon">🚀</div>
+        <div class="apl-ben-text"><h5>Early Launches</h5><p>Be the first to know about new STK Royal products and innovations.</p></div>
+      </div>
+    </div>
+    <div class="apl-product">
+      <img src="img/stkroyal.png" alt="STK Royal Yeast" onerror="this.style.display='none'">
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="auth-panel-right">
+    <div class="auth-nav-right">
+      <a href="login.html">Already have an account? <span>Sign In →</span></a>
+    </div>
+    <div class="auth-form-wrap">
+      <h1 class="auth-form-title">Create Your <em>Account</em></h1>
+      <p class="auth-form-sub">Join thousands of chefs, bakers, and home cooks across Nigeria who trust STK Royal.</p>
+
+      <div class="form-msg" id="formMsg"></div>
+
+      <!-- ACCOUNT TYPE -->
+      <div class="form-section-label">I am a...</div>
+      <div class="account-type">
+        <div class="acct-card selected" id="acct-home" onclick="selectAcct('home')">
+          <span class="acct-icon">🏠</span>
+          <div class="acct-label">Home Baker</div>
+          <div class="acct-desc">Personal & family use</div>
+        </div>
+        <div class="acct-card" id="acct-chef" onclick="selectAcct('chef')">
+          <span class="acct-icon">👨‍🍳</span>
+          <div class="acct-label">Chef / Baker</div>
+          <div class="acct-desc">Professional kitchen</div>
+        </div>
+        <div class="acct-card" id="acct-trade" onclick="selectAcct('trade')">
+          <span class="acct-icon">🏪</span>
+          <div class="acct-label">Trade / Business</div>
+          <div class="acct-desc">Wholesale & reseller</div>
+        </div>
+      </div>
+
+      <!-- PERSONAL INFO -->
+      <div class="form-section-label">Personal Information</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" id="fname" placeholder="First name" autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="lname" placeholder="Last name" autocomplete="family-name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="your@email.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" id="phone" placeholder="+234 000 000 0000" autocomplete="tel">
+      </div>
+
+      <!-- LOCATION -->
+      <div class="form-section-label">Location</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>State</label>
+          <select id="state">
+            <option value="">Select state</option>
+            <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option><option>Anambra</option><option>Bauchi</option><option>Bayelsa</option><option>Benue</option><option>Borno</option><option>Cross River</option><option>Delta</option><option>Ebonyi</option><option>Edo</option><option>Ekiti</option><option>Enugu</option><option>FCT — Abuja</option><option>Gombe</option><option>Imo</option><option>Jigawa</option><option>Kaduna</option><option>Kano</option><option>Katsina</option><option>Kebbi</option><option>Kogi</option><option>Kwara</option><option selected>Lagos</option><option>Nasarawa</option><option>Niger</option><option>Ogun</option><option>Ondo</option><option>Osun</option><option>Oyo</option><option>Plateau</option><option>Rivers</option><option>Sokoto</option><option>Taraba</option><option>Yobe</option><option>Zamfara</option><option>International</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" id="city" placeholder="Your city">
+        </div>
+      </div>
+
+      <!-- PASSWORD -->
+      <div class="form-section-label">Security</div>
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-wrap">
+          <input type="password" id="password" placeholder="Create a strong password" oninput="checkStrength(this.value)" autocomplete="new-password">
+          <span class="input-icon" id="pwToggle" onclick="togglePw('password','pwToggle')">👁</span>
+        </div>
+        <div class="password-strength"><div class="strength-bar" id="strengthBar"></div></div>
+        <div class="strength-text" id="strengthText"></div>
+      </div>
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <div class="input-wrap">
+          <input type="password" id="confirmPassword" placeholder="Repeat your password" autocomplete="new-password">
+          <span class="input-icon" id="cpwToggle" onclick="togglePw('confirmPassword','cpwToggle')">👁</span>
+        </div>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div class="terms-row">
+        <input type="checkbox" id="newsletter" checked>
+        <label for="newsletter">Subscribe me to STK Royal news, offers, and baking tips.</label>
+      </div>
+
+      <!-- TERMS -->
+      <div class="terms-row">
+        <input type="checkbox" id="terms">
+        <label for="terms">I agree to the <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a> of STK Royal.</label>
+      </div>
+
+      <button class="submit-btn" id="submitBtn" onclick="handleSignup()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+        Create My Account
+      </button>
+
+      <div class="divider"><span>or sign up with</span></div>
+      <div class="social-signup">
+        <button class="social-btn" onclick="socialSignup('Google')">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Continue with Google
+        </button>
+        <button class="social-btn" onclick="socialSignup('Facebook')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Continue with Facebook
+        </button>
+      </div>
+
+      <div class="auth-switch">Already have an account? <a href="login.html">Sign in here →</a></div>
+
+      <div class="trust-chips">
+        <span class="trust-chip">Secure & encrypted</span>
+        <span class="trust-chip">No spam ever</span>
+        <span class="trust-chip">Cancel anytime</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+
+  // Close mobile nav when clicking a link
+  document.querySelectorAll('.mobile-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    });
+  });
+
+  let selectedAcct = 'home';
+  function selectAcct(type) {
+    document.querySelectorAll('.acct-card').forEach(c => c.classList.remove('selected'));
+    document.getElementById('acct-' + type).classList.add('selected');
+    selectedAcct = type;
+  }
+
+  function togglePw(id, iconId) {
+    const input = document.getElementById(id);
+    const icon = document.getElementById(iconId);
+    if (input.type === 'password') { input.type = 'text'; icon.textContent = '🙈'; }
+    else { input.type = 'password'; icon.textContent = '👁'; }
+  }
+
+  function checkStrength(pw) {
+    const bar = document.getElementById('strengthBar');
+    const text = document.getElementById('strengthText');
+    let score = 0;
+    if (pw.length >= 8) score++;
+    if (/[A-Z]/.test(pw)) score++;
+    if (/[0-9]/.test(pw)) score++;
+    if (/[^A-Za-z0-9]/.test(pw)) score++;
+    const map = [
+      { w: '0%', bg: 'transparent', t: '' },
+      { w: '25%', bg: '#e53e3e', t: 'Weak — add uppercase, numbers or symbols' },
+      { w: '50%', bg: '#d4ab4a', t: 'Fair — a bit stronger' },
+      { w: '75%', bg: '#48bb78', t: 'Good — almost there!' },
+      { w: '100%', bg: '#1a3a2a', t: 'Strong password ✓' }
+    ];
+    bar.style.width = map[score].w;
+    bar.style.background = map[score].bg;
+    text.textContent = pw ? map[score].t : '';
+    text.style.color = map[score].bg;
+  }
+
+  function handleSignup() {
+    const msg = document.getElementById('formMsg');
+    const fname = document.getElementById('fname').value.trim();
+    const lname = document.getElementById('lname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const password = document.getElementById('password').value;
+    const confirm = document.getElementById('confirmPassword').value;
+    const terms = document.getElementById('terms').checked;
+
+    msg.style.display = 'none';
+
+    if (!fname || !lname) { showMsg('error', '⚠️ Please enter your first and last name.'); return; }
+    if (!email || !email.includes('@')) { showMsg('error', '⚠️ Please enter a valid email address.'); return; }
+    if (!phone) { showMsg('error', '⚠️ Please enter your phone number.'); return; }
+    if (password.length < 8) { showMsg('error', '⚠️ Password must be at least 8 characters.'); return; }
+    if (password !== confirm) { showMsg('error', '⚠️ Passwords do not match. Please check and try again.'); return; }
+    if (!terms) { showMsg('error', '⚠️ Please agree to the Terms & Conditions to continue.'); return; }
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Creating Account...';
+
+    setTimeout(() => {
+      showMsg('success', '🎉 Welcome to STK Royal, ' + fname + '! Your account has been created. Redirecting you to login...');
+      btn.innerHTML = '✓ Account Created!';
+      setTimeout(() => { window.location.href = 'login.html'; }, 2500);
+    }, 1500);
+  }
+
+  function socialSignup(provider) {
+    const msg = document.getElementById('formMsg');
+    showMsg('success', 'Connecting to ' + provider + '... This feature will be available soon.');
+  }
+
+  function showMsg(type, text) {
+    const msg = document.getElementById('formMsg');
+    msg.textContent = text;
+    msg.className = 'form-msg ' + type;
+    msg.style.display = 'block';
+    msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+</body>
+</html>
